@@ -1,28 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Here i created models for given task.
+Working concept of task
+1.we have to create following models:-
+    i)Franchise
+   ii)Person
+  iii)Purchase
+   iv)PizzaType
+    v)City
 
-Things you may want to cover:
+2.Association betweet models:-
+    i)Franchise has_many people through purchases
+   ii)Person has_many franchises through purchases
+  iii)PizzaType has_many purcheses
+   iv)Purchese belongs_to person, franchise, pizza_type
+    v)City has_and_belongs_to_many :franchises
+   vi)Franchise has_and_belongs_to_many :cities
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+3.Query to find list of people who eats a particular pizza variety in any selected franchise.
+    *) Person.where(:purchases=> {:pizza_type_id=>? , :franchise_id=>?}).includes(:purchases)
