@@ -18,4 +18,4 @@ Working concept of task
    vi)Franchise has_and_belongs_to_many :cities
 
 3.Query to find list of people who eats a particular pizza variety in any selected franchise.
-    *) Person.where(:purchases=> {:pizza_type_id=>? , :franchise_id=>?}).includes(:purchases)
+     Person.where(:purchases=> {:pizza_type_id=>? , :franchise_id=>?}).includes(:purchases)
