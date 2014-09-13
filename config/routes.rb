@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "admin/dashboard#index"
   post '/admin/search' => "home#search"
   get '/admin/search'=> "home#index"
  get "/home/index"=>"home#index"
